@@ -6,16 +6,14 @@
 | ----------- | ---------------------- |
 | TeamID      |        Team-116        |
 | TeamName    |       AbduNo1Fans      |
-| Captain     |       Abdu Alawini     |
-| Captain     |  alawini@illinois.edu  |
-| Member1     |        Kevin Pei       |
-| Member1     |   kevin2@illinois.edu  |
-| Member2     |    Bharati Kulkarni    |
-| Member2     |  bharati1@illinois.edu |
-| Member3     |                        |
-| Member3     |                        |
-| Member4     |                        |
-| Member4     |                        |
+| Captain     |     Nikitha Sundaram   |
+| Captain     |  nikitha6@illinois.edu |
+| Member1     |       Vidit Gautam     |
+| Member1     |  vgautam2@illinois.edu |
+| Member2     |       Alex Eilert      |
+| Member2     |  aeilert2@illinois.edu |
+| Member3     |       Vincent Ng       |
+| Member3     |    vng20@illinois.edu  |
 
 ## Project Information
 
