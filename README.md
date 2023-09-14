@@ -14,3 +14,6 @@ You should make sure you keep your project root files up-to-date. Information fo
 
 ## Code Contribution
 Individual code contribution will be used to evaluate individual contribution to the project.
+
+## Project Summary
+During our project we will create a database that stores data about crimes committed in Los Angeles. We will then create a website which visualizes the locations of the crimes committed with the ability to filter by specific types of crimes or groups of crimes such as nonviolent and violent, and time ranges that the crimes were committed.We will connect the website with the database such that new database entries are reflected on the webpage.  This will allow people to track where crimes are being committed, and what kinds of crimes they are.
