@@ -6,8 +6,8 @@
 | ----------- | ---------------------- |
 | TeamID      |        Team-116        |
 | TeamName    |       AbduNo1Fans      |
-| Captain     |     Nikitha Sundaram   |
-| Captain     |  nikitha6@illinois.edu |
+| Captain     |         Kyle P         |
+| Captain     |  kylekp2@illinois.edu  |
 | Member1     |       Vidit Gautam     |
 | Member1     |  vgautam2@illinois.edu |
 | Member2     |       Alex Eilert      |
