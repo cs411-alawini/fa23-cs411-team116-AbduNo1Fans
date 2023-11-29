@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+nav{
+    width: 100%;
+    height: 100px;
+    background-color:whitesmoke;
+    display: inline;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 30px;
+}
+ul{
+
+}
+ul li{
+    list-style: none;
+    display: inline;
+    line-height: 100px;
+    margin: 0 auto 0 0px
+}
+ul li a{
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    color: grey;
+    padding: 0 20px;
+}
+body{
+    background-color: #eee;
+}
+.wrapper{
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px
+}
+.mapimg{
+    display: block;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+form{
+
+    width: 300px;
+}
+input{
+    width: 100%;
+}
