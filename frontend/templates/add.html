@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        DangerZone
+    </title>
+    <link rel = "stylesheet" href = "style.css">
+</head>
+<nav>
+    <ul>
+        DangerZone
+        <li><a href="index.html">Home</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="add.html">Report</a></li>
+        <li><a href="profile.html">Profile</a></li>
+    </ul>
+</nav>
+<body>
+    <style>
+        h5 {text-align: center;}
+    </style>
+    <h1>
+        <div>
+            <h5>Report Crimes</h5>
+        </div>
+    </h1>
+    <form method="post" action="process_add.php">
+        <div>
+            <label for="keyword">Time:</label>
+            <input type="text" id="time" name="time" placeholder="Enter Military Time" autocomplete="off">
+        </div>
+        
+        <div>
+            <label for="keyword">Location:</label>
+            <input type="text" id="areacode" name="areacode" placeholder="Enter Area Code" autocomplete="off">
+        </div>
+
+        <div>
+            <label for="keyword">Crime:</label>
+            <input type="text" id="crimecode" name="crimecode" placeholder="Enter Crime Code" autocomplete="off">
+        </div>
+
+        <div>
+            <label for="keyword">Crime Premis:</label>
+            <input type="text" id="premiscode" name="premiscode" placeholder="Enter Premis Code" autocomplete="off">
+        </div>
+
+        <div>
+            <label for="keyword">Weapon:</label>
+            <input type="text" id="weaponcode" name="weaponcode" placeholder="Enter Weapon Code" autocomplete="off">
+        </div>
+
+        <div>
+            <label for="keyword">Longitude:</label>
+            <input type="text" id="Longitude" name="Longitude" placeholder="Enter Longitude" autocomplete="off">
+        </div>
+
+        <div>
+            <label for="keyword">Latitude:</label>
+            <input type="text" id="Latitude" name="Latitude" placeholder="Enter Latitude" autocomplete="off">
+        </div>
+
+        <button type="submit" name="submit">Submit</button>
+    </form>
+</body>
+
+</html>
