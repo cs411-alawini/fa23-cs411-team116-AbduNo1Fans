@@ -65,13 +65,13 @@ for r in res:
     premis_dict[r[1]] = r[0]
 
 def update_selected():
-    op1 = execute_query(f"SELECT crime_desc FROM CrimeFilter NATURAL JOIN CrimeType WHERE Username = '{session["user"]}'")
+    op1 = execute_query(f"SELECT crime_desc FROM CrimeFilter NATURAL JOIN CrimeType WHERE Username = '{session['user']}'")
     selected_options['Crimes'] = [o[0] for o in op1]
     
-    op2 = execute_query(f"SELECT weapon_desc FROM WeaponFilter NATURAL JOIN WeaponType WHERE Username = '{session["user"]}'")
+    op2 = execute_query(f"SELECT weapon_desc FROM WeaponFilter NATURAL JOIN WeaponType WHERE Username = '{session['user']}'")
     selected_options['Weapons'] = [o[0] for o in op2]
     
-    op3 = execute_query(f"SELECT premis_desc FROM PremisFilter NATURAL JOIN PremisType WHERE Username = '{session["user"]}'")
+    op3 = execute_query(f"SELECT premis_desc FROM PremisFilter NATURAL JOIN PremisType WHERE Username = '{session['user']}'")
     selected_options['Premis'] = [o[0] for o in op3]
     print(selected_options)
 

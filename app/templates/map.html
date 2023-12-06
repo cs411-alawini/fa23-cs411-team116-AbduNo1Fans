@@ -12,7 +12,6 @@
       <li class = "nav_li"><a class = "nav_li_a" href="{{ url_for("map") }}">Map</a></li>
       <li class = "nav_li"><a class = "nav_li_a" href="{{ url_for("search") }}">Search</a></li>
       <li class = "nav_li"><a class = "nav_li_a" href="{{ url_for("profile") }}">Profile</a></li>
-      <li class = "nav_li"><a class = "nav_li_a" href="{{ url_for("report") }}">Report</a></li>
       <li class = "nav_li"><a class = "nav_li_a" href="{{ url_for("logout") }}">Log Out</a></li>
       {{username}}
     </ul>
@@ -27,7 +26,7 @@
     <h1>
       <div class="wrapper">
         <h5>Los Angeles Crime Map</h5>
-        <div id="map" style="height: 800px; width: 800px; margin:auto;"></div>
+        <div id="map" style="height: 600px; width: 1000px; margin:auto;"></div>
         <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
         <script
           type="text/javascript"

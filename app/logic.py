@@ -16,7 +16,7 @@ def get_crimes(username):
     for crime in res:
         if (crime[2] == None):
             continue
-        info = f"Crime: {crime[2]}\nPremis: {crime[3]}\nWeapon: {crime[4]}"
+        info = f"Crime: {crime[2]}\nWeapon: {crime[4]}\nPremis: {crime[3]}"
         ret.append({"lat": crime[0], "lon": crime[1], "info": info})
     return ret
     
