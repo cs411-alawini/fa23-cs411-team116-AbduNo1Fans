@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DangerZone</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <nav>
+    <div style="width: 900px; margin:auto;"> 
+    <ul>
+      DangerZone
+      <li class = "nav_li"><a class = "nav_li_a" href="{{ url_for("map") }}">Home</a></li>
+      <li class = "nav_li"><a class = "nav_li_a" href="{{ url_for("search") }}">Search</a></li>
+      <li class = "nav_li"><a class = "nav_li_a" href="{{ url_for("report") }}">Report</a></li>
+      <li class = "nav_li"><a class = "nav_li_a" href="{{ url_for("logout") }}">Log Out</a></li>
+      {{username}}
+    </ul>
+  </div>
+  </nav>
+  <body>
+    <style>
+      h5 {
+        text-align: center;
+      }
+    </style>
+    <h1>
+      <div class="wrapper">
+        <h5>Los Angeles Crime Map</h5>
+        <div id="map" style="height: 800px; width: 800px; margin:auto;"></div>
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+        <script
+          type="text/javascript"
+          src="{{ url_for('static', filename='script/script.js') }}"
+        ></script>
+        <script type="text/javascript">
+          // Pass coordinates from Flask to JavaScript
+          let crimeSpots = {{ crime_spots | tojson }};
+          initializeMap(crimeSpots);
+        </script>
+      </div>
+    </h1>
+  </body>
+</html>

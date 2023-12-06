@@ -4,19 +4,21 @@
     <title>
         DangerZone
     </title>
-    <link rel = "stylesheet" href = "style.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <nav>
+    <div style="width: 900px; margin:auto;"> 
     <ul>
-        DangerZone
-        <li><a href="index.html">Home</a></li>
-        <li><a href="search.html">Search</a></li>
-        <li><a href="add.html">Report</a></li>
-        <li><a href="profile.html">Profile</a></li>
+      DangerZone
+      <li class = "nav_li"><a class = "nav_li_a" href="{{ url_for("map") }}">Home</a></li>
+      <li class = "nav_li"><a class = "nav_li_a" href="{{ url_for("search") }}">Search</a></li>
+      <li class = "nav_li"><a class = "nav_li_a" href="{{ url_for("report") }}">Report</a></li>
+      <li class = "nav_li"><a class = "nav_li_a" href="{{ url_for("logout") }}">Log Out</a></li>
+      {{username}}
     </ul>
-</nav>
+  </div>
+  </nav>
 <body>
-    <link rel = "stylesheet" href = "style.css">
     <style>
         h5 {text-align: center;}
     </style>

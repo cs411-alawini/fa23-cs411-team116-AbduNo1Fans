@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multi Dropdown Example</title>
+    <!-- Include Select2 CSS and JS, and jQuery -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <style>
+        .selected-item:hover {
+          cursor: pointer;
+          color: red;
+        }
+        .container {
+          display: flex;
+          justify-content: space-between;
+        }
+        .dropdown-container {
+          margin: 10px;
+        }
+      </style>
+    <script>
+        $(document).ready(function() {
+            // Initialize Select2 on all dropdowns
+            $('.dropdown').select2();
+
+            function updateSelectedList(listId, options) {
+                $('#selected-' + listId).empty();
+                options.forEach(function(option) {
+                    $('#selected-' + listId).append('<li class = "selected-item" onclick="removeOption(\'' + listId + '\', \'' + option + '\')">' + option + '</li>');
+                });
+            }
+
+            // Function to add and remove options
+            window.addOption = function(listId, option) {
+                $.ajax({
+                    url: '/add/' + listId,
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({option: option}),
+                    success: function(response) {
+                        updateSelectedList(listId, response.selected_options);
+                    }
+                });
+            }
+
+            window.removeOption = function(listId, option) {
+                $.ajax({
+                    url: '/remove/' + listId,
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({option: option}),
+                    success: function(response) {
+                        updateSelectedList(listId, response.selected_options);
+                    }
+                });
+            }
+
+            // Event listeners for dropdown selections
+            $('.dropdown').on('select2:select', function (e) {
+                var listId = $(this).attr('id').split('-')[1];
+                var selectedOption = e.params.data.text;
+                addOption(listId, selectedOption);
+                // Reset the Select2 selection
+                $(this).val(null).trigger('change');
+            });
+
+            // Initialize selected lists with server data
+            {% for list_id, options in selected_options.items() %}
+            updateSelectedList('{{ list_id }}', {{ options|tojson }});
+            {% endfor %}
+        });
+    </script>
+</head>
+<body>
+
+    <nav>
+        <div style="width: 900px; margin:auto;"> 
+        <ul>
+          DangerZone
+          <li class = "nav_li"><a class = "nav_li_a" href="{{ url_for("map") }}">Home</a></li>
+          <li class = "nav_li"><a class = "nav_li_a" href="{{ url_for("search") }}">Search</a></li>
+          <li class = "nav_li"><a class = "nav_li_a" href="{{ url_for("report") }}">Report</a></li>
+          <li class = "nav_li"><a class = "nav_li_a" href="{{ url_for("logout") }}">Log Out</a></li>
+          {{username}}
+        </ul>
+      </div>
+      </nav>
+
+    <div style="display: flex; justify-content: space-between;">
+        {% for list_id, options in all_options.items() %}
+        <div>
+            <select id="dropdown-{{ list_id }}" class="dropdown" style="width: 200px;">
+                {% for option in options %}
+                <option value="{{ option }}">{{ option }}</option>
+                {% endfor %}
+            </select>
+            <ul id="selected-{{ list_id }}">
+                <!-- Selected options will be populated here -->
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
