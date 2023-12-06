@@ -10,8 +10,9 @@
     <div style="width: 900px; margin:auto;"> 
     <ul>
       DangerZone
-      <li class = "nav_li"><a class = "nav_li_a" href="{{ url_for("map") }}">Home</a></li>
+      <li class = "nav_li"><a class = "nav_li_a" href="{{ url_for("map") }}">Map</a></li>
       <li class = "nav_li"><a class = "nav_li_a" href="{{ url_for("search") }}">Search</a></li>
+      <li class = "nav_li"><a class = "nav_li_a" href="{{ url_for("profile") }}">Profile</a></li>
       <li class = "nav_li"><a class = "nav_li_a" href="{{ url_for("report") }}">Report</a></li>
       <li class = "nav_li"><a class = "nav_li_a" href="{{ url_for("logout") }}">Log Out</a></li>
       {{username}}
@@ -24,28 +25,20 @@
     </style>
         <h1>
             <div class="wrapper">
-                <h5>User Profile</h5>
+                <h5>Create Account</h5>
             </div>
         </h1>
+        <h2>
         <div class = "container">
             <form action="" method="post">
-                <div class="field input">
-                    <label for="email">Email</label>
-                    <input type="text" name="email" id="email" autocomplete="off" required>
-                </div>
-
-                <div class="field input">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password" autocomplete="off" required>
-                </div>
-
-                <div class="field">
-                    <input type="submit" class="btn" name="submit" value="Login" required>
-                </div>
-                <div class="links">
-                    Don't have account? <a href="register.html">Sign Up Now</a>
-                </div>
+                <form action="/login" method="post">
+                    Username: <input type="text" name="username"><br>
+                    Password: <input type="password" name="password"><br>
+                    <input type="submit" value="Register">
+                    <p> <h5 style="color: red;">{{message}} </h5> </p>
+                </form>
         </div>
+    </h2>
     </form>
     </form>
 </body>

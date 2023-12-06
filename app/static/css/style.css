@@ -90,3 +90,10 @@ form {
 .premisvalid_results ul li:hover{
     background-color:aliceblue ;
 }
+
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+  }

@@ -1,4 +1,6 @@
 from queries import execute_query
+import time
+import datetime
 
 def attempt_login(username, password):
     cmd = "SELECT password FROM Users WHERE username = %s"
@@ -21,6 +23,9 @@ def get_crimes(username):
 def desc_to_code(table:str, desc:str):
     res = execute_query(f"SELECT {table.lower()}_code FROM {table}Type WHERE {table.lower()}_desc = {desc}")
     return res[0][0]
+def get_timestamp():
+    ts = time.time()
+    return datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d %H:%M:%S')
 
 if __name__ == "__main__":
     print(attempt_login("User999", "password645"))

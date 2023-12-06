@@ -23,17 +23,25 @@
     <style>
         h5 {text-align: center;}
     </style>
-    <h2>
-        <form action="/login" method="post">
-            Username: <input type="text" name="username"><br>
-            Password: <input type="password" name="password"><br>
-            <input type="submit" value="Login">
-        </form>
-        <div class = "center" > 
-            <div style="color: red;">{{message}}</div>
-        <a href = {{url_for("new_account")}}> Create New Account </a>
+        <h1>
+            <div class="wrapper">
+                <h4 class = "center">Create Account</h4>
+                <h6 class = "center">Last updated: {{last_updated}}</h6>
+            </div>
+        </h1>
+        <h2>
+        <div class = "container">
+            
+            <form action="" method="post">
+                <form action="/login" method="post">
+                    Change Password<br>
+                    Old Password: <input type="password" name="old_password"><br>
+                    New Password: <input type="password" name="new_password"><br>
+                    <input type="submit" value="Register">
+                    <p> <h5 style="color: {{color}};">{{message}} </h5> </p>
+                </form>
         </div>
     </h2>
+    </form>
+    </form>
 </body>
-
-</html>

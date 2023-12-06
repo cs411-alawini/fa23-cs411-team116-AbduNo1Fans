@@ -80,8 +80,9 @@
         <div style="width: 900px; margin:auto;"> 
         <ul>
           DangerZone
-          <li class = "nav_li"><a class = "nav_li_a" href="{{ url_for("map") }}">Home</a></li>
+          <li class = "nav_li"><a class = "nav_li_a" href="{{ url_for("map") }}">Map</a></li>
           <li class = "nav_li"><a class = "nav_li_a" href="{{ url_for("search") }}">Search</a></li>
+          <li class = "nav_li"><a class = "nav_li_a" href="{{ url_for("profile") }}">Profile</a></li>
           <li class = "nav_li"><a class = "nav_li_a" href="{{ url_for("report") }}">Report</a></li>
           <li class = "nav_li"><a class = "nav_li_a" href="{{ url_for("logout") }}">Log Out</a></li>
           {{username}}
@@ -92,6 +93,7 @@
     <div style="display: flex; justify-content: space-between;">
         {% for list_id, options in all_options.items() %}
         <div>
+            <p><h2>{{list_id}}</h2></p>
             <select id="dropdown-{{ list_id }}" class="dropdown" style="width: 200px;">
                 {% for option in options %}
                 <option value="{{ option }}">{{ option }}</option>
