@@ -34,8 +34,10 @@ def login():
 def map():
     if 'user' not in session:
         return redirect(url_for('login'))
-    crime_spots = logic.get_crimes(session['user'])
-    return render_template('map.html', username=session['user'], crime_spots=crime_spots)
+    limit = 1000
+    crime_spots = logic.get_crimes(session['user'], limit)
+    general = {"crime_count": len(crime_spots), "limit": limit}
+    return render_template('map.html', username=session['user'], crime_spots=crime_spots, data = general)
 
 all_options = {
     'Crimes': [crime[0] for crime in execute_query("SELECT crime_desc FROM CrimeType")],

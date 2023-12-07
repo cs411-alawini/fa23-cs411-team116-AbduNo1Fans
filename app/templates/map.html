@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DangerZone</title>
+    <title>DangerZone Map</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/icon.webp') }}">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
   </head>
@@ -37,6 +38,10 @@
           let crimeSpots = {{ crime_spots | tojson }};
           initializeMap(crimeSpots);
         </script>
+      </div>
+      <div class = "center" style="font-size:20px">
+        Crimes found {{data["crime_count"]}} (Limit {{data["limit"]}})
+
       </div>
     </h1>
   </body>

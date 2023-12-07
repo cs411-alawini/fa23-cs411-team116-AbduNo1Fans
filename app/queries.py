@@ -17,6 +17,20 @@ def execute_query(*args):
         print("Error:", e)
     finally:
         cursor.close()
+
+def call_proc(*args):
+    cursor = db.cursor(buffered=True)
+    try:
+        cursor.callproc(*args)
         
+        for result in cursor.stored_results():
+            return result.fetchall()
+    except Exception as e:
+        print("Error:", e)
+    finally:
+        cursor.close()
+
 if __name__ == "__main__":
     print(execute_query("SELECT * FROM Users"))
+    
+    

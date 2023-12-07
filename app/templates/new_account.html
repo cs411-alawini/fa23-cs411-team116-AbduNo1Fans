@@ -2,8 +2,9 @@
 <html>
 <head>
     <title>
-        DangerZone
+        DangerZone Register
     </title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/icon.webp') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <nav>
@@ -35,7 +36,9 @@
                     Password: <input type="password" name="password"><br>
                     <input type="submit" value="Register">
                     <p> <h5 style="color: red;">{{message}} </h5> </p>
+                    <a class = "center" href = {{url_for("login")}}> Login Instead </a>
                 </form>
+                
         </div>
     </h2>
     </form>
